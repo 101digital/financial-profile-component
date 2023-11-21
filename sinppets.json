@@ -1,0 +1,8 @@
+{
+  "initial": {
+    "prefix": "financial-profile-component-init",
+    "body": [],
+    "description": "",
+    "scope": "javascript,typescript,typescriptreact"
+  }
+}
