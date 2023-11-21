@@ -21,9 +21,8 @@ export const FinanceProvider: React.FC = ({ children }) => {
     try {
       // Call the financial service to get financial details with pagination parameters
       const response = await financialService.getFinancialProfile(userId);
-
       // Check if the response contains data
-      if (response.data && response.data.length > 0) {
+      if (response.data) {
         // Set the financialDetails state
         setFinancialProfileDetails(response.data);
       }
@@ -33,15 +32,11 @@ export const FinanceProvider: React.FC = ({ children }) => {
   };
 
   useEffect(() => {
-    // Fetch the initial page of financial details
-    // if (user) {
-    //   fetchFinancialProfile(userId);
-    // }
 
   }, []);
 
   return (
-    <FinancialContext.Provider value={{ financialProfileDetails }}>
+    <FinancialContext.Provider value={{ financialProfileDetails,fetchFinancialProfile }}>
       {children}
     </FinancialContext.Provider>
   );
